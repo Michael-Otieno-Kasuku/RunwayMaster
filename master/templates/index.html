@@ -1,5 +1,3 @@
-<!-- Additions marked with comments -->
-
 {% extends 'base_index.html' %}
 {% load static %}
 
@@ -7,32 +5,21 @@
     <!-- Sidebar Section -->
     <aside class="sidebar">
         <nav class="navigation" role="navigation" aria-label="Main Navigation">
-            <a href="#home" class="nav-item">
-                &#x1F3E0; <span class="nav-text">Home</span>
-            </a>
-            <a href="#downloads" class="nav-item">
-                &#x1F4BE; <span class="nav-text">Downloads</span>
-            </a>
-            <a href="#about" class="nav-item">
-                &#x2139; <span class="nav-text">About Us</span>
-            </a>
-            <a href="#contact" class="nav-item">
-                &#x2709; <span class="nav-text">Contact Us</span>
-            </a>
-            <a href="#faqs" class="nav-item">
-                &#x2753; <span class="nav-text">FAQs</span>
-            </a>
-            <a href="#help" class="nav-item">
-                &#x1F6C8; <span class="nav-text">Help</span>
-            </a>
+            <a href="#home" class="nav-item">Home</a>
+            <a href="#downloads" class="nav-item">Downloads</a>
+            <a href="#about" class="nav-item">About Us</a>
+            <a href="#contact" class="nav-item">Contact Us</a>
+            <a href="#faqs" class="nav-item">FAQs</a>
+            <a href="#help" class="nav-item">Help</a>
         </nav>
     </aside>
+    
     <!-- Main Content Section -->
     <main class="main-content">
         <!-- Home Section -->
         <section id="home" class="section">
             <div class="container">
-                <p>Runway Master is a sophisticated platform for the simulation and optimization of flight scheduling and runway allocation. Utilizing Discrete Event Simulation (DES) and the Non-dominated Sorting Genetic Algorithm II (NSGA-II), we aim to enhance the efficiency of airport operations.</p>
+                <p>Welcome to Runway Master, a sophisticated platform for flight scheduling and runway optimization.</p>
             </div>
         </section>
 
@@ -42,6 +29,7 @@
                 <h2>Downloads</h2>
                 <p>Get the latest version of Runway Master and additional resources:</p>
                 <ul>
+                    
                     <li><a href="#">Runway Master v1.0</a></li>
                     <li><a href="#">User Manual</a></li>
                     <li><a href="#">Simulation Guide</a></li>
@@ -53,9 +41,7 @@
         <section id="about" class="section">
             <div class="container">
                 <h2>About Us</h2>
-                <p>Runway Master was developed to address the complexities of flight scheduling and runway allocation. Our platform uses advanced simulation and optimization techniques to ensure efficient airport operations.</p>
-                <p>Our primary objective is to optimize the allocation of shared resources (runways and aprons) at Airport A, while considering the constraints and variables associated with flight operations.</p>
-                <p>We use Discrete Event Simulation (DES) to model the operations and resource allocation, and Non-dominated Sorting Genetic Algorithm II (NSGA-II) for optimizing resource utilization and minimizing delays.</p>
+                <p>Runway Master was developed to optimize flight scheduling and runway allocation, enhancing airport operations efficiency.</p>
             </div>
         </section>
 
@@ -64,7 +50,7 @@
             <div class="container">
                 <h2>Contact Us</h2>
                 <p>If you have any questions or need further information, please reach out to us:</p>
-                <form id="contactForm" class="contact-form" action="#" method="POST"> <!-- Form action added -->
+                <form id="contactForm" class="contact-form" action="#" method="POST">
                     {% csrf_token %}
                     <label for="name">Name:</label>
                     <input type="text" id="name" name="name" required>
@@ -84,10 +70,6 @@
                 <h2>Frequently Asked Questions (FAQs)</h2>
                 <h3>What is Runway Master?</h3>
                 <p>Runway Master is a simulation and optimization platform designed for efficient flight scheduling and runway allocation at airports.</p>
-                <h3>How does the simulation work?</h3>
-                <p>We use Discrete Event Simulation (DES) to model flight operations and resource allocation dynamically.</p>
-                <h3>What optimization techniques are used?</h3>
-                <p>We utilize the Non-dominated Sorting Genetic Algorithm II (NSGA-II) to achieve multi-objective optimization, balancing various conflicting goals such as minimizing delays and maximizing resource utilization.</p>
             </div>
         </section>
 
@@ -111,4 +93,11 @@
             </div>
         </footer>
     </main>
+
+    <!-- JavaScript to handle sidebar toggle -->
+    <script>
+        function toggleSidebar() {
+            document.querySelector('.sidebar').classList.toggle('active');
+        }
+    </script>
 {% endblock %}
